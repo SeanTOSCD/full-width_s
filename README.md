@@ -32,9 +32,7 @@ Full-wdith Underscores addresses this issue by removing the original "container"
 <code>
 &lt;div id="{name}-row" class="full"&gt;
 	&lt;div class="main"&gt;
-		
-		&lt;header&gt; Header, for example &lt;/header&gt;
-		
+		... &lt;header&gt; Header, for example &lt;/header&gt; ...
 	&lt;/div&gt;
 &lt;/div&gt;
 </code>
