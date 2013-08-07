@@ -23,7 +23,7 @@ Full-width Underscores is almost exactly the same as the original `_s` starter t
 
 Using their awesome tool at http://underscores.me/, I created this variation of the theme using the theme slug `fwu` to replace `_s` throughout the theme.
 
-I created this variation because the original Underscores was set up to have a page-width HTML structure. That means directly inside of the <code><body><code> tag for the theme, a <div> was placed acting as a container for all other site content. While there's nothing wrong with that, many web designers like to create full-width designs that allow design elements to span the entire width of the viewport while keeping the content within a given "page" range.
+I created this variation because the original Underscores was set up to have a page-width HTML structure. That means directly inside of the <code>&lt;body&gt;<code> tag for the theme, a <div> was placed acting as a container for all other site content. While there's nothing wrong with that, many web designers like to create full-width designs that allow design elements to span the entire width of the viewport while keeping the content within a given "page" range.
 
 With a traditional page-width structure, styling the site <body> is the only way to design for full-width. The problem with that is you lose the ability to design the full-width area "behind" individual HTML elements like the <header> or <footer>. Sure, a little design trickery on the <body> will achieve the same visual results but it's a pretty silly approach.
 
