@@ -23,32 +23,38 @@ Full-width Underscores is almost exactly the same as the original `_s` starter t
 
 Using their awesome tool at http://underscores.me/, I created this variation of the theme using the theme slug `fwu` to replace `_s` throughout the theme.
 
-I created this variation because the original Underscores was set up to have a page-width HTML structure. That means directly inside of the <code>&lt;body&gt;<code> tag for the theme, a <div> was placed acting as a container for all other site content. While there's nothing wrong with that, many web designers like to create full-width designs that allow design elements to span the entire width of the viewport while keeping the content within a given "page" range.
+I created this variation because the original Underscores was set up to have a page-width HTML structure. That means directly inside of the <code>&lt;body&gt;</code> tag for the theme, a <code>&lt;div&gt;</code> was placed acting as a container for all other site content. While there's nothing wrong with that, many web designers like to create full-width designs that allow design elements to span the entire width of the viewport while keeping the content within a given "page" range.
 
-With a traditional page-width structure, styling the site <body> is the only way to design for full-width. The problem with that is you lose the ability to design the full-width area "behind" individual HTML elements like the <header> or <footer>. Sure, a little design trickery on the <body> will achieve the same visual results but it's a pretty silly approach.
+With a traditional page-width structure, styling the site <code>&lt;body&gt;</code> is the only way to design for full-width. The problem with that is you lose the ability to design the full-width area "behind" individual HTML elements like the <code>&lt;header&gt;</code> or <code>&lt;footer&gt;</code>. Sure, a little design trickery on the <body> will achieve the same visual results but it's a pretty silly approach.
 
-Full-wdith Underscores addresses this issue by removing the original "container" <div> (#page) from the HTML structure and wrapping each of its former first-child elements in their own containers.
+Full-wdith Underscores addresses this issue by removing the original "container" <code>&lt;div&gt;</code> (#page) from the HTML structure and wrapping each of its former first-child elements in their own containers.
 
-<div id="{name}-row" class="full">
-	<div class="main">
+<code>
+&lt;div id="{name}-row" class="full"&gt;
+	&lt;div class="main"&gt;
 		
-		... <header> Header, for example </header> ...
+		... &lt;header&gt; Header, for example &lt;/header&gt; ...
 		
-	</div>
-</div>
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
 
 The corresponding CSS is as follows:
 
+<code>
 .full { width: 100% }
 .main { width: 1024px; margin: 0 auto; }
+</code>
 
 With this HTML and CSS in place, .full elements will span the entire viewport and can be style on their own. Their first-child .main is given a defined width (which can easily be changed) but also centered in the viewport with the margin property. 
 
-This provides a full-width HTML structure great for design flexibility but also allows the site content to remain within a given range on the screen. A page-width look can even be achieved by styling .main the way you would have originally styled the "container" <div> (#page).
+This provides a full-width HTML structure great for design flexibility but also allows the site content to remain within a given range on the screen. A page-width look can even be achieved by styling .main the way you would have originally styled the "container" <code>&lt;div&gt;</code> (#page).
 
-I've also added an "inner" class to the <header>, the main content <div> (.site-content), and the <footer>. This class isn't necessary but comes in handy for styling the important elements inside of the full-width structure all at once. For example, they've been given the following CSS:
+I've also added an "inner" class to the <code>&lt;header&gt;</code>, the main content <code>&lt;div&gt;</code> (.site-content), and the <code>&lt;footer&gt;</code>. This class isn't necessary but comes in handy for styling the important elements inside of the full-width structure all at once. For example, they've been given the following CSS:
 
+<code>
 .inner { padding: 1em 0; }
+</code>
 
 This creates a little separation between the edges of the full-width borders and the content they contain.
 
