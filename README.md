@@ -29,7 +29,7 @@ With a traditional page-width structure, styling the site <code>&lt;body&gt;</co
 
 Full-wdith Underscores addresses this issue by removing the original "container" <code>&lt;div&gt;</code> (#page) from the HTML structure and wrapping each of its former first-child elements in their own containers.
 
-	<div id="{name}-row" class="full">
+	<div id="header-row" class="full">
 		<div class="main">
 			
 			... <header> Header, for example </header> ...
