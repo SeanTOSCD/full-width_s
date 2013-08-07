@@ -29,18 +29,18 @@ With a traditional page-width structure, styling the site <code>&lt;body&gt;</co
 
 Full-wdith Underscores addresses this issue by removing the original "container" <code>&lt;div&gt;</code> (#page) from the HTML structure and wrapping each of its former first-child elements in their own containers.
 
-	&lt;div id="{name}-row" class="full"&gt;
-		&lt;div class="main"&gt;
-			... &lt;header&gt; Header, for example &lt;/header&gt; ...
-		&lt;/div&gt;
-	&lt;/div&gt;
+	<div id="{name}-row" class="full">
+		<div class="main">
+			
+			... <header> Header, for example </header> ...
+			
+		</div>
+	</div>
 
 The corresponding CSS is as follows:
 
-<code>
-.full { width: 100% }
-.main { width: 1024px; margin: 0 auto; }
-</code>
+	.full { width: 100% }
+	.main { width: 1024px; margin: 0 auto; }
 
 With this HTML and CSS in place, .full elements will span the entire viewport and can be style on their own. Their first-child .main is given a defined width (which can easily be changed) but also centered in the viewport with the margin property. 
 
@@ -48,9 +48,8 @@ This provides a full-width HTML structure great for design flexibility but also 
 
 I've also added an "inner" class to the <code>&lt;header&gt;</code>, the main content <code>&lt;div&gt;</code> (.site-content), and the <code>&lt;footer&gt;</code>. This class isn't necessary but comes in handy for styling the important elements inside of the full-width structure all at once. For example, they've been given the following CSS:
 
-<code>
-.inner { padding: 1em 0; }
-</code>
+	.inner { padding: 1em 0; }
+
 
 This creates a little separation between the edges of the full-width borders and the content they contain.
 
