@@ -58,7 +58,7 @@ Getting Started
 
 Full-width Underscores' one drawback is that the awesome underscores.me can't be used since I've already used it to create this theme. However, you still have the option to roll with FWU's setup or you can mannually replace the theme slug with the same methods used in the original Underscores.
 
-Download `Full-width Underscores` from github. The first thing you want to do is copy the `full-width_s` directory and change the name of the theme to something else - Like, say, `megatherium` - then you'll need to do a five-step find and replace on the name in all the templates.
+Download `Full-width Underscores` from github. The first thing you want to do is copy the `full-width_s-master` directory and change the name of the theme to something else - Like, say, `megatherium` - then you'll need to do a five-step find and replace on the name in all the templates.
 
 1. Search for `'fwu'` (inside single quotations) to capture the text domain.
 2. Search for `fwu_` to capture all the function names.
