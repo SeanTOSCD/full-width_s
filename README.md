@@ -27,7 +27,7 @@ I created this variation because the original Underscores was set up to have a p
 
 With a traditional page-width structure, styling the site <code>&lt;body&gt;</code> is the only way to design for full-width. The problem with that is you lose the ability to design the full-width area "behind" individual HTML elements like the <code>&lt;header&gt;</code> or <code>&lt;footer&gt;</code>. Sure, a little design trickery on the <body> will achieve the same visual results but it's a pretty silly approach.
 
-Full-wdith Underscores addresses this issue by removing the original "container" <code>&lt;div&gt;</code> (#page) from the HTML structure and wrapping each of its former first-child elements in their own containers.
+Full-width Underscores addresses this issue by removing the original "container" <code>&lt;div&gt;</code> (#page) from the HTML structure and wrapping each of its former first-child elements in their own containers.
 
 	<div id="header-row" class="full">
 		<div class="main">
