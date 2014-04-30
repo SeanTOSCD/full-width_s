@@ -79,3 +79,40 @@ Then, update the stylesheet header in style.css and the links in footer.php with
 Now you're ready to go! The next step is easy to say but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+
+
+
+
+Nothing is broken but I'm a little interested in discussion here. This is mainly about consistency for me but I'm wondering if there's more to it than I realize at the moment. Let's look at the page content template part as an example of what I want to discuss. https://github.com/Automattic/_s/blob/master/content-page.php
+
+Lines 10 through 12 are the markup for the `<header>` and its `H1` element that holds the page title. Immediately following the header element is a helpful `<!-- .entry-header -->` comment. Great. 
+
+Now looking at the title function, `the_title()`, we all know that it's more than capable outputting the HTML markup around it using its built-in parameters, $before and $after (which echo by default). It would look something like this.
+
+```php
+<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header>' ); ?>
+```
+
+I think that's a perfectly normal alternative to the current code. Notice I left off the helper comment. Now let's skip down to line 23 for the edit link function. This is how it appears at the moment.
+
+```php
+<?php edit_post_link( __( 'Edit', '_s' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+```
+
+This is basically the same setup as the aforementioned title alternative but uses the `edit_post_link()` function which also has $before and $after parameters that is uses. Again, no helper comment. This could just as easily be written as:
+
+```php
+<footer class="entry-footer">
+<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
+</footer><!-- .entry-header -->
+```
+
+Note: I left the span tag in the function since it's an inline tag and applies directly to the edit link. I also added the helper comment. That would make it consistent with the **current** header and content elements which also sport helper comments.
+
+Why the inconsistency? If you jump on over to the [single content template part](https://github.com/Automattic/_s/blob/master/content-single.php), the setup is a little different because there's more going on in both the header and footer elements. Looking particularly at the edit link in the footer, now that it's displayed in the manner I wrote out above, it also has a help comment after it.
+
+Considering (correct me if I'm wrong) it doesn't hurt anything to write out the HTML and let the function parameters default to none, why not:
+
+* improve template structure consistency
+* go all in on helper comments, especially with sibling elements
+* always leave the `<footer>` element as "free" markup (applies to pages) and gain the added benefit being able to add to the page footer without having to yank to markup from the function parameters first.
